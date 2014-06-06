@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7928D5A61941ACBF00654B60 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7928D5A51941ACBF00654B60 /* TableViewController.swift */; };
+		795A073D1941B68E00BFB490 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795A073C1941B68E00BFB490 /* ToDoItem.swift */; };
 		79C5974719418A280085192D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C5974619418A280085192D /* AppDelegate.swift */; };
 		79C5974919418A280085192D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C5974819418A280085192D /* ViewController.swift */; };
 		79C5974C19418A280085192D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79C5974A19418A280085192D /* Main.storyboard */; };
@@ -25,6 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7928D5A51941ACBF00654B60 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		795A073B1941B34900BFB490 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		795A073C1941B68E00BFB490 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		79C5974119418A280085192D /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C5974519418A280085192D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79C5974619418A280085192D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +80,9 @@
 		79C5974319418A280085192D /* MyApp */ = {
 			isa = PBXGroup;
 			children = (
+				7928D5A51941ACBF00654B60 /* TableViewController.swift */,
+				795A073C1941B68E00BFB490 /* ToDoItem.swift */,
+				795A073B1941B34900BFB490 /* TableViewController.h */,
 				79C5974619418A280085192D /* AppDelegate.swift */,
 				79C5974819418A280085192D /* ViewController.swift */,
 				79C5974A19418A280085192D /* Main.storyboard */,
@@ -209,6 +217,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				79C5974919418A280085192D /* ViewController.swift in Sources */,
+				7928D5A61941ACBF00654B60 /* TableViewController.swift in Sources */,
+				795A073D1941B68E00BFB490 /* ToDoItem.swift in Sources */,
 				79C5974719418A280085192D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +340,7 @@
 				INFOPLIST_FILE = MyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -341,6 +352,7 @@
 				INFOPLIST_FILE = MyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -399,6 +411,7 @@
 				79C5975F19418A280085192D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		79C5976019418A280085192D /* Build configuration list for PBXNativeTarget "MyAppTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +420,7 @@
 				79C5976219418A280085192D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
