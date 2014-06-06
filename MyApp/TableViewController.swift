@@ -13,6 +13,13 @@ import UIKit
 @objc(TableViewController) class TableViewController: UITableViewController {
 
     @IBAction func unwindToList(segue:UIStoryboardSegue){
+        var source: ViewController = segue.sourceViewController as ViewController
+        var item: ToDoItem = source.toDoItem
+        
+        if item != nil{
+            self.toDoItems.addObject(item)
+            self.tableView.reloadData()
+        }
         
     }
     
