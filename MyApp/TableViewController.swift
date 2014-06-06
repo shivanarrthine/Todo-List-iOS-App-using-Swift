@@ -48,8 +48,33 @@ import UIKit
         var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier(CellIndentifier) as UITableViewCell
         var todoitem: ToDoItem = self.toDoItems.objectAtIndex(indexPath.row) as ToDoItem  
         cell.textLabel.text = todoitem.itemName
-        
+        println("Todo: \(todoitem.itemName) Completed: \(todoitem.completed)")
+        if todoitem.completed{
+            cell.accessoryType = .Checkmark
+        }
+        else{
+            cell.accessoryType = .None
+        }
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        var tappedItem: ToDoItem = self.toDoItems.objectAtIndex(indexPath.row) as ToDoItem
+        tappedItem.completed = !tappedItem.completed
+        println("Task: \(tappedItem.itemName) Completed: \(tappedItem.completed)")
+        tableView.reloadData()
+        
+    }
 }
+
+
+
+
+
+
+
+
+
