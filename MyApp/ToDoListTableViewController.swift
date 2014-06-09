@@ -10,10 +10,10 @@ import UIKit
 
 
 
-@objc(TableViewController) class TableViewController: UITableViewController {
+@objc(ToDoListTableViewController) class ToDoListTableViewController: UITableViewController {
 
     @IBAction func unwindToList(segue:UIStoryboardSegue){
-        var source: ViewController = segue.sourceViewController as ViewController
+        var source: AddToDoViewController = segue.sourceViewController as AddToDoViewController
         var item: ToDoItem = source.toDoItem!
         
         if item != nil{

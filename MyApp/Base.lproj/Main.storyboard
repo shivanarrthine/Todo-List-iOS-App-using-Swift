@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - To-do-->
+        <!--To Do List Table View Controller - To-do-->
         <scene sceneID="iMM-s8-zSe">
             <objects>
-                <tableViewController id="3En-Oc-1qi" customClass="TableViewController" sceneMemberID="viewController">
+                <tableViewController id="3En-Oc-1qi" customClass="ToDoListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="l2c-EK-le9">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="921" y="295"/>
         </scene>
-        <!--View Controller - Add to-do Item-->
+        <!--Add To Do View Controller - Add to-do Item-->
         <scene sceneID="zot-Wg-S8E">
             <objects>
-                <viewController id="vLz-Qu-Afi" customClass="ViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vLz-Qu-Afi" customClass="AddToDoViewController" customModule="MyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hv2-d0-dko"/>
                         <viewControllerLayoutGuide type="bottom" id="Bl5-w3-MRp"/>
