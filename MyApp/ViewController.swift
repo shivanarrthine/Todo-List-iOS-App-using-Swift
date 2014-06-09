@@ -10,16 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var toDoItem: ToDoItem
-    
-    init(coder aDecoder: NSCoder!)
-    {
-        self.toDoItem = ToDoItem(name: String())
-        super.init(coder: aDecoder)
-    }
-    
-    
-    
+    var toDoItem: ToDoItem?
+
     @IBOutlet var textfield : UITextField
     @IBOutlet var doneButton : UIBarButtonItem
     
@@ -40,7 +32,6 @@ class ViewController: UIViewController {
         if self.textfield.text.utf16count > 0{
             self.toDoItem = ToDoItem(name: self.textfield.text)
         }
-        
     }
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {

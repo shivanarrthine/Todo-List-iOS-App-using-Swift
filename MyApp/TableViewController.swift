@@ -14,7 +14,7 @@ import UIKit
 
     @IBAction func unwindToList(segue:UIStoryboardSegue){
         var source: ViewController = segue.sourceViewController as ViewController
-        var item: ToDoItem = source.toDoItem
+        var item: ToDoItem = source.toDoItem!
         
         if item != nil{
             self.toDoItems.addObject(item)
@@ -28,7 +28,6 @@ import UIKit
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "ListPrototypeCell")
         loadInitialData()
     }
     
@@ -55,7 +54,6 @@ import UIKit
         var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier(CellIndentifier) as UITableViewCell
         var todoitem: ToDoItem = self.toDoItems.objectAtIndex(indexPath.row) as ToDoItem  
         cell.textLabel.text = todoitem.itemName
-        println("Todo: \(todoitem.itemName) Completed: \(todoitem.completed)")
         if todoitem.completed{
             cell.accessoryType = .Checkmark
         }
@@ -71,7 +69,6 @@ import UIKit
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         var tappedItem: ToDoItem = self.toDoItems.objectAtIndex(indexPath.row) as ToDoItem
         tappedItem.completed = !tappedItem.completed
-        println("Task: \(tappedItem.itemName) Completed: \(tappedItem.completed)")
         tableView.reloadData()
         
     }
