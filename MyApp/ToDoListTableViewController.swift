@@ -14,9 +14,7 @@ import UIKit
 
     @IBAction func unwindToList(segue:UIStoryboardSegue){
         var source: AddToDoViewController = segue.sourceViewController as AddToDoViewController
-        var item: ToDoItem = source.toDoItem!
-        
-        if item != nil{
+        if var item: ToDoItem = source.toDoItem{
             self.toDoItems.addObject(item)
             self.tableView.reloadData()
         }
