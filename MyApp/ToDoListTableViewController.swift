@@ -13,7 +13,7 @@ import UIKit
 @objc(ToDoListTableViewController) class ToDoListTableViewController: UITableViewController {
 
     @IBAction func unwindToList(segue:UIStoryboardSegue){
-        var source: AddToDoViewController = segue.sourceViewController as AddToDoViewController
+        var source: AddToDoViewController = segue.sourceViewController as! AddToDoViewController
         if var item: ToDoItem = source.toDoItem{
             self.toDoItems.addObject(item)
             self.tableView.reloadData()
@@ -38,34 +38,41 @@ import UIKit
         self.toDoItems.addObject(item3)
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.toDoItems.count
     }
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let CellIndentifier: NSString = "ListPrototypeCell"
-        var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier(CellIndentifier) as UITableViewCell
-        var todoitem: ToDoItem = self.toDoItems.objectAtIndex(indexPath.row) as ToDoItem  
-        cell.textLabel.text = todoitem.itemName
+        
+        var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier(CellIndentifier as String) as! UITableViewCell
+        
+        var todoitem: ToDoItem = self.toDoItems.objectAtIndex(indexPath.row) as! ToDoItem
+        
+        cell.textLabel?.text = todoitem.itemName as String
+        
         if todoitem.completed{
+            
             cell.accessoryType = .Checkmark
+            
         }
+            
         else{
+            
             cell.accessoryType = .None
+            
         }
         
         return cell
     }
     
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
-        var tappedItem: ToDoItem = self.toDoItems.objectAtIndex(indexPath.row) as ToDoItem
+        var tappedItem: ToDoItem = self.toDoItems.objectAtIndex(indexPath.row) as! ToDoItem
         tappedItem.completed = !tappedItem.completed
         tableView.reloadData()
         
