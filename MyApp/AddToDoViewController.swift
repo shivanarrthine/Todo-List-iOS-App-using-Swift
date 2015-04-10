@@ -12,8 +12,8 @@ class AddToDoViewController: UIViewController {
     
     var toDoItem: ToDoItem?
 
-    @IBOutlet var textfield : UITextField
-    @IBOutlet var doneButton : UIBarButtonItem
+    @IBOutlet var textfield : UITextField!
+    @IBOutlet var doneButton : UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +25,16 @@ class AddToDoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if sender as? NSObject != self.doneButton{
             return
         }
-        if self.textfield.text.utf16count > 0{
+        if !self.textfield.text.isEmpty{
             self.toDoItem = ToDoItem(name: self.textfield.text)
         }
     }
     
-    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
 
